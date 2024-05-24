@@ -32,9 +32,10 @@ const Navbar = ({ handleClick }) => {
               />
             </svg>
 
-            <h1 
-          onClick={handleClick}
-            className="btn font-semibold subpixel-antialiased tracking-wide btn btn-link press-start-2p-regular text-md text-white lg:text-2xl no-underline hover:no-underline">
+            <h1
+              onClick={handleClick}
+              className="btn font-semibold subpixel-antialiased tracking-wide btn btn-link press-start-2p-regular text-md text-white lg:text-2xl no-underline hover:no-underline"
+            >
               БУРУНДУ.ЧАН
             </h1>
           </div>
