@@ -15,7 +15,9 @@ class BoardController {
     @GetMapping("boards")
     fun getBoards() =
         listOf(
-            Board(1, "/b"),
-            Board(2, "/sex")
+            Board(1, "/b "),
+            Board(2, "/po "),
+            Board(3, "/a "),
+            Board(4, "/vg ")
         )
 }

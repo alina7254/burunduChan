@@ -7,6 +7,7 @@ function BoardDiv({ board }: {
         <div>
             <h1 className="text-4xl font-bold">{board.name}</h1>
         </div>
+        
     );
 }
 
