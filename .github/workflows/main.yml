@@ -1,0 +1,37 @@
+name: Sync Translations with SimpleLocalize
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  export-translations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Export translations to SimpleLocalize
+        env:
+          SIMPLELOCALIZE_PROJECT_TOKEN: ${{ secrets.SIMPLELOCALIZE_PROJECT_TOKEN }}
+        run: |
+          curl -H "Authorization: Bearer $SIMPLELOCALIZE_PROJECT_TOKEN" \
+               -F "file=@translations.json" \
+               https://api.simplelocalize.io/api/v1/translations/upload
+
+  import-translations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Import translations from SimpleLocalize
+        env:
+          SIMPLELOCALIZE_PROJECT_TOKEN: ${{ secrets.SIMPLELOCALIZE_PROJECT_TOKEN }}
+        run: |
+          curl -H "Authorization: Bearer $SIMPLELOCALIZE_PROJECT_TOKEN" \
+               -F "file=@translations.json" \
+               https://api.simplelocalize.io/api/v1/translations/upload
